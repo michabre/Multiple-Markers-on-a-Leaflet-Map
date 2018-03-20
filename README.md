@@ -1,6 +1,6 @@
 # Multiple Markers on a LeafletJS Map
 
-A simple example of a Leaflet Javascript map with multiple markers.
+A simple example of a Leaflet map with multiple markers using HTML, CSS, and JS.
 
 In the example, I am using Food Trucks based in Victoria, BC courtesy of the [Street Food App](https://streetfoodapp.com/)
 
