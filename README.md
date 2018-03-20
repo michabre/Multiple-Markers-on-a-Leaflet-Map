@@ -25,7 +25,8 @@ I use Live Server with Visual Studio Code to run simple static code, but you can
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License
+
 
 ## Acknowledgments
 
