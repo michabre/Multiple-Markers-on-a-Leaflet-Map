@@ -1,8 +1,10 @@
-# Multiple Markers on a LeafletJS Map
+# Multiple Markers on a Map using LeafletJS
 
 A simple example of a Leaflet map with multiple markers using HTML, CSS, and JS.
 
 In the example, I am using Food Trucks based in Victoria, BC courtesy of the [Street Food App](https://streetfoodapp.com/)
+
+Check out the [DEMO](http://examples.mikevsweb.com/multiple-markers-on-a-leaflet-map/)
 
 
 ## Getting Started
@@ -25,9 +27,4 @@ I use Live Server with Visual Studio Code to run simple static code, but you can
 
 ## License
 
-This project is licensed under the MIT License
-
-
-## Acknowledgments
-
-* Leaflet
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
