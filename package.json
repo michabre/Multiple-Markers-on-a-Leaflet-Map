@@ -1,0 +1,36 @@
+{
+  "name": "multiple-markers-on-a-leaflet-map",
+  "version": "2.0.0",
+  "description": "A simple example of a Leaflet map with multiple markers using HTML, CSS, and JS.",
+  "main": "index.html",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "test": "jest --watchAll --verbose",
+    "report": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michabre/Multiple-Markers-on-a-Leaflet-Map.git"
+  },
+  "author": "michabre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michabre/Multiple-Markers-on-a-Leaflet-Map/issues"
+  },
+  "homepage": "https://github.com/michabre/Multiple-Markers-on-a-Leaflet-Map#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@types/jest": "^27.0.2",
+    "bulma": "^0.9.3",
+    "leaflet": "^1.7.1",
+    "jest": "^27.3.1",
+    "vite": "^2.6.13"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "jsdom"
+  }
+}

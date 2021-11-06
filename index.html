@@ -1,25 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Multiple Markers on a LeafletJS Map</title>
-    <meta name="description" content="A simple example of a Leaflet map with multiple markers using HTML, CSS, and JS.">
-    <meta name="author" content="michabre">
+    <meta
+      name="description"
+      content="A simple example of a Leaflet map with multiple markers."
+    />
+    <meta name="author" content="michabre" />
+  </head>
 
-    <!-- LeafletJS Styles -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+  <body>
+    <section class="hero mb-5">
+      <div class="hero-body">
+        <h2 class="title">Multiple Markers on a LeafletJS Map</h2>
+        <p class="subtitle">
+          A simple example of a Leaflet map with multiple markers.
+        </p>
+      </div>
+    </section>
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half">
+          <div class="border-1px p-3 mb-5">
+            <div class="field">
+              <label class="label">Latitude</label>
+              <div class="control">
+                <input
+                  id="latitude"
+                  class="input"
+                  type="text"
+                  placeholder="Enter Latitude"
+                />
+              </div>
+            </div>
 
-    <!-- LeafletJS API -->
-    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+            <div class="field">
+              <label class="label">Longitude</label>
+              <div class="control">
+                <input
+                  id="longitude"
+                  class="input"
+                  type="text"
+                  placeholder="Enter Longitude"
+                />
+              </div>
+            </div>
+          </div>
 
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link">Add Marker</button>
+            </div>
+            <div class="control">
+              <button class="button is-link is-light">Reset</button>
+            </div>
+          </div>
+        </div>
 
-<body>
-    <h1>Multiple Markers on a LeafletJS Map</h1>
-    <p>A simple example of a Leaflet map with multiple markers using HTML, CSS, and JS.</p>
-    <div id="map"></div>
-    <script src="js/multiple-markers.js"></script>
-</body>
+        <div id="map-container" class="column is-half">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <div id="map"></div>
+                <img
+                  src="https://bulma.io/images/placeholders/1280x960.png"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <div id="app"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer mt-5">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Multiple Markers on a Leaflet Map</strong> by
+          <a href="https://jgthms.com">michabre</a>. Use this code however you
+          like.
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
