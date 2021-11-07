@@ -25,6 +25,17 @@
         <div class="column is-half">
           <div class="border-1px p-3 mb-5">
             <div class="field">
+              <label class="label">Name of Location</label>
+              <div class="control">
+                <input
+                  id="name"
+                  class="input"
+                  type="text"
+                  placeholder="Enter Name of Location"
+                />
+              </div>
+            </div>
+            <div class="field">
               <label class="label">Latitude</label>
               <div class="control">
                 <input
@@ -49,14 +60,7 @@
             </div>
           </div>
 
-          <div class="field is-grouped">
-            <div class="control">
-              <button class="button is-link">Add Marker</button>
-            </div>
-            <div class="control">
-              <button class="button is-link is-light">Reset</button>
-            </div>
-          </div>
+          <div id="app"></div>
         </div>
 
         <div id="map-container" class="column is-half">
@@ -72,7 +76,7 @@
             </div>
             <div class="card-content">
               <div class="content">
-                <div id="app"></div>
+                
               </div>
             </div>
           </div>

@@ -27,6 +27,13 @@ body {
   z-index: 99;
 }
 
+.centre-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: transparent url("./img/center-icon.png") no-repeat center center;
+  background-size: contain;
+}
+
 .border-1px {
   border: 1px solid #ccc;
 }
