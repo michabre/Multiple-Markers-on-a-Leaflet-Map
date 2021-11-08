@@ -5,19 +5,18 @@ import L from "leaflet";
  *
  * @param {string} token // access token from Mapbox
  * @param {string} el // element id to use for the map container
- * @param {array} coords // latitude and longitude for the map center
- * @param {number} zoom // zoom level of the map
- * @param {object} locations // locations to use as markers
  * @returns Map Object
  */
-const Map = (token, el, coords, zoom) => {
-  const map = L.map(el).setView(coords, zoom);
+const Map = (token, el, zoom) => {
+  const map = L.map(el);
+  const layerGroup = L.layerGroup().addTo(map);
   const centreIcon = L.divIcon({ className: "centre-icon" });
-  // marker for centre of map
-  L.marker(coords, { icon: centreIcon }).addTo(map);
+  //console.log(map.distance(coords, [11.0049836, 122.5372741]) / 1000);
 
   return {
-    init: (locations) => {
+    init: (coords, locations) => {
+      map.setView(coords, zoom);
+      L.marker(coords, { icon: centreIcon }).addTo(map);
       L.tileLayer(
         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
         {
@@ -35,11 +34,26 @@ const Map = (token, el, coords, zoom) => {
       locations.map((location) => {
         L.marker([location.lat, location.lon])
           .bindPopup(location.name)
-          .addTo(map);
-      })
+          .addTo(layerGroup);
+      });
     },
-    reset: () => {
+    reset: (coords, zoom) => {
+      layerGroup.clearLayers();
       map.setView(coords, zoom);
+    },
+    update: (locations) => {
+      // make the last location added the centre of the map
+      let centre = [
+        locations[locations.length - 1].lat,
+        locations[locations.length - 1].lon,
+      ];
+      map.setView(centre, zoom);
+      locations.map((location) => {
+        L.marker([location.lat, location.lon])
+          .bindPopup(location.name)
+          .addTo(layerGroup);
+        map.panTo([location.lat, location.lon]);
+      });
     },
   };
 };

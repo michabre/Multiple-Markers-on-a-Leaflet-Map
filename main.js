@@ -10,12 +10,15 @@ import "./src/css/styles.css";
 const appConfig = config();
 const ACCESS_TOKEN = appConfig.access_token;
 
-getLocation("latitude", "longitude");
+// add latitude and longitude results to
+// the form fields
+getLocation("name", "latitude", "longitude");
+
 let locations = [];
 const markers = locations.length > 0 ? locations : Vendors;
 
-const leafletMap = Map(ACCESS_TOKEN, "map", [48.4284, -123.3656], 15);
-leafletMap.init(markers);
+const leafletMap = Map(ACCESS_TOKEN, "map", 15);
+leafletMap.init([48.4284, -123.3656], markers);
 
 //
 const addMarker = (e) => {
@@ -24,13 +27,16 @@ const addMarker = (e) => {
     lat: document.getElementById("latitude").value,
     lon: document.getElementById("longitude").value,
   });
-  console.log(locations);
+  leafletMap.update(locations);
+  (document.getElementById("name").value = ""),
+    (document.getElementById("latitude").value = ""),
+    (document.getElementById("longitude").value = "");
 };
 
 const resetMap = (e) => {
   locations = [];
   getLocation("latitude", "longitude");
-  leafletMap.reset();
+  leafletMap.reset([48.4284, -123.3656], 15);
 };
 
 document.querySelector("#app").innerHTML = `
@@ -44,5 +50,6 @@ document.querySelector("#app").innerHTML = `
   </div>
 `;
 
+// Add Marker and Reset Buttons
 document.getElementById("add").addEventListener("click", addMarker);
 document.getElementById("reset").addEventListener("click", resetMap);

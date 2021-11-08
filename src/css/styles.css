@@ -2,6 +2,7 @@ body {
   font-family: sans-serif;
   font-size: 16px;
 }
+
 /* HERO */
 .hero {
   background-color: #232323;
@@ -17,7 +18,6 @@ body {
 #map-container .image {
   position: relative;
 }
-
 #map {
   position: absolute !important;
   top: 0;
@@ -26,18 +26,19 @@ body {
   height: 100%;
   z-index: 99;
 }
-
 .centre-icon {
-  width: 50px !important;
-  height: 50px !important;
+  width: 40px !important;
+  height: 40px !important;
   background: transparent url("./img/center-icon.png") no-repeat center center;
   background-size: contain;
 }
 
-.border-1px {
-  border: 1px solid #ccc;
-}
 /* FOOTER */
 .footer {
   background-color: #f2f2f2;
+}
+
+/* HELPERS */
+.border-1px {
+  border: 1px solid #ccc;
 }

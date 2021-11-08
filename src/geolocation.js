@@ -1,4 +1,4 @@
-const getLocation = (field_lat, field_lon) => {
+const getLocation = (field_name, field_lat, field_lon) => {
   const options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -7,12 +7,10 @@ const getLocation = (field_lat, field_lon) => {
 
   const onSuccess = (position) => {
     let crd = position.coords;
-    console.log("Your current position is:");
-    console.log(`Latitude : ${crd.latitude}`);
-    console.log(`Longitude: ${crd.longitude}`);
-    console.log(`More or less ${crd.accuracy} meters.`);
+    document.getElementById(field_name).value = "Your Current Location";
     document.getElementById(field_lat).value = crd.latitude;
-    document.getElementById(field_lon).value = crd.longitude;
+    document.getElementById(field_lon).value = crd.latitude;
+    return [crd.latitude, crd.latitude];
   };
 
   const onError = (error) => {
