@@ -8,8 +8,8 @@ const getLocation = (field_name, field_lat, field_lon) => {
   const onSuccess = (position) => {
     let crd = position.coords;
     document.getElementById(field_name).value = "Your Current Location";
-    document.getElementById(field_lat).value = crd.latitude;
-    document.getElementById(field_lon).value = crd.latitude;
+    document.getElementById(field_lat).value = crd.latitude ?? "Not found";
+    document.getElementById(field_lon).value = crd.longitude ?? "Not found";
     return [crd.latitude, crd.latitude];
   };
 

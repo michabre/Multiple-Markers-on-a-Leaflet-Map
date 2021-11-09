@@ -10,13 +10,11 @@ import L from "leaflet";
 const Map = (token, el, zoom) => {
   const map = L.map(el);
   const layerGroup = L.layerGroup().addTo(map);
-  const centreIcon = L.divIcon({ className: "centre-icon" });
   //console.log(map.distance(coords, [11.0049836, 122.5372741]) / 1000);
 
   return {
     init: (coords, locations) => {
       map.setView(coords, zoom);
-      L.marker(coords, { icon: centreIcon }).addTo(map);
       L.tileLayer(
         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
         {

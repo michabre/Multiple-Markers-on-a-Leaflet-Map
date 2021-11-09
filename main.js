@@ -18,6 +18,8 @@ let locations = [];
 const markers = locations.length > 0 ? locations : Vendors;
 
 const leafletMap = Map(ACCESS_TOKEN, "map", 15);
+// make Victoria, BC the default centre of the map
+// since the datd is for food trucks in that city
 leafletMap.init([48.4284, -123.3656], markers);
 
 //
@@ -28,15 +30,19 @@ const addMarker = (e) => {
     lon: document.getElementById("longitude").value,
   });
   leafletMap.update(locations);
-  (document.getElementById("name").value = ""),
-    (document.getElementById("latitude").value = ""),
-    (document.getElementById("longitude").value = "");
+  document.getElementById("name").value = "";
+  document.getElementById("latitude").value = "";
+  document.getElementById("longitude").value = "";
 };
 
-const resetMap = (e) => {
+const resetMap = () => {
   locations = [];
-  getLocation("latitude", "longitude");
+  getLocation("name", "latitude", "longitude");
   leafletMap.reset([48.4284, -123.3656], 15);
+};
+
+const getCurrentLocation = () => {
+  getLocation("name", "latitude", "longitude");
 };
 
 document.querySelector("#app").innerHTML = `
@@ -47,9 +53,15 @@ document.querySelector("#app").innerHTML = `
     <div class="control">
       <button id="reset" class="button is-link is-light">Reset</button>
     </div>
+    <div class="control">
+      <button id="getLocation" class="button is-link is-success">Get Location</button>
+    </div>
   </div>
 `;
 
 // Add Marker and Reset Buttons
 document.getElementById("add").addEventListener("click", addMarker);
 document.getElementById("reset").addEventListener("click", resetMap);
+document
+  .getElementById("getLocation")
+  .addEventListener("click", getCurrentLocation);

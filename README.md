@@ -1,18 +1,33 @@
 # Multiple Markers on a Map using LeafletJS
 
-A simple example of a Leaflet map with multiple markers using HTML, CSS, and JS.
+A Leaflet map displaying multiple markers. Tried to keep it fairly vanilla, so it could be integrated
+into whatever application requires it. 
 
-In the example, I am using Food Trucks based in Victoria, BC courtesy of the [Street Food App](https://streetfoodapp.com/)
+On load, it will render the locations food trucks based in Victoria, BC. The locations are
+requested from a local JSON object called data.js
 
-Check out the [DEMO](http://examples.mikevsweb.com/multiple-markers-on-a-leaflet-map/)
-
+Clicking Reset will remove all markers from the map, allowing you to start fresh and add locations
+with the form. If navigator.geolocation is available, the form will initialize with your current location.
 
 ## Getting Started
 
-Upload this code to a local, public or private web server that supports HTML, JS and CSS. 
+```bash
+# clone the repo
+git clone https://github.com/michabre/Multiple-Markers-on-a-Leaflet-Map.git
 
-I use Live Server with Visual Studio Code to run simple static code, but you can use MAMP, XAMPP, NodeJS, IIS, - really whatever you like and prefer.
+# install dependencies
+npm install
 
+# run application
+npm run start
+
+```
+
+You will need to get a Mapbox access token when deploying to your own site. 
+
+The access token would be added into the sample.config.js file, which currently is using the access token from the [Leaflet Quick Start Guide](https://leafletjs.com/examples/quick-start/).
+
+For testing out the map, I used locations from here: [www.latlong.net](https://www.latlong.net/latest-places.html)
 
 ## Built With
 
