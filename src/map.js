@@ -10,6 +10,7 @@ import L from "leaflet";
 const Map = (token, el, zoom) => {
   const map = L.map(el);
   const layerGroup = L.layerGroup().addTo(map);
+  const markerIcon = L.divIcon({ className: "centre-icon" });
   //console.log(map.distance(coords, [11.0049836, 122.5372741]) / 1000);
 
   return {
@@ -30,7 +31,7 @@ const Map = (token, el, zoom) => {
 
       // add markers at locations specified in locations array
       locations.map((location) => {
-        L.marker([location.lat, location.lon])
+        L.marker([location.lat, location.lon], { icon: markerIcon })
           .bindPopup(location.name)
           .addTo(layerGroup);
       });
@@ -47,7 +48,7 @@ const Map = (token, el, zoom) => {
       ];
       map.setView(centre, zoom);
       locations.map((location) => {
-        L.marker([location.lat, location.lon])
+        L.marker([location.lat, location.lon], { icon: markerIcon })
           .bindPopup(location.name)
           .addTo(layerGroup);
         map.panTo([location.lat, location.lon]);
