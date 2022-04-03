@@ -27,7 +27,8 @@
     "bulma": "^0.9.3",
     "leaflet": "^1.7.1",
     "jest": "^27.3.1",
-    "vite": "^2.6.13"
+    "vite": "^2.6.13",
+    "minimist": ">=1.2.6"
   },
   "jest": {
     "verbose": true,
